@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web personal de Christopher, estudiante de 2.º de ASIR en el instituto Quevedo.">
+  <title>Christopher | Informática y tecnología</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Cabecera principal -->
+  <header class="cabecera" id="inicio">
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca" href="#inicio">Christopher<span>.</span></a>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#lo-que-he-hecho">Lo que he hecho</a></li>
+        <li><a href="#me-gusta">Me gusta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+            <!-- Selectores de modo inspirados en fútbol americano y F1 -->
+      <div class="controles-deporte" role="group" aria-label="Selecciona un modo visual">
+        <button class="boton-deporte" type="button" data-modo="futbol" aria-pressed="false">
+          <span aria-hidden="true">🏈</span>
+          <span>Fútbol</span>
+        </button>
+        <button class="boton-deporte" type="button" data-modo="f1" aria-pressed="false">
+          <span aria-hidden="true">🏎️</span>
+          <span>F1</span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="presentacion">
+      <p class="etiqueta">Estudiante de 2.º de ASIR · Instituto Quevedo</p>
+      <h1>Hola, soy Christopher.</h1>
+      <p class="frase">Me interesa la informática y me encanta descubrir cómo avanza la tecnología.</p>
+      <a class="enlace-principal" href="#sobre-mi">Conóceme <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección sobre Christopher -->
+    <section class="seccion" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <p class="etiqueta">Un poco sobre mí</p>
+      <h2 id="titulo-sobre-mi">Sobre mí</h2>
+      <div class="sobre-mi-contenido">
+        <div class="sobre-mi-texto">
+          <p>
+            Soy Christopher, estudiante de segundo curso de Administración de Sistemas
+            Informáticos en Red en el instituto Quevedo. Me gusta indagar sobre
+            informática, aprender cosas nuevas y acercarme cada vez más al mundo de
+            la tecnología.
+          </p>
+          <p>
+            Mi objetivo es dedicarme a la informática y seguir aprendiendo sobre un
+            sector que no deja de evolucionar.
+          </p>
+        </div>
+        <figure class="foto-sobre-mi">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
+            alt="Detalle de una placa electrónica y sus componentes"
+            loading="lazy"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <!-- Sección de experiencias -->
+    <section class="seccion seccion-roja" id="lo-que-he-hecho" aria-labelledby="titulo-he-hecho">
+      <p class="etiqueta">Experiencias y aprendizajes</p>
+      <h2 id="titulo-he-hecho">Lo que he hecho</h2>
+      <ul class="lista">
+        <li>He viajado y conocido lugares nuevos.</li>
+        <li>Me he comprado una moto.</li>
+        <li>He jugado a las cartas.</li>
+        <li>He empezado un curso de ciberseguridad.</li>
+      </ul>
+    </section>
+
+    <!-- Sección de intereses -->
+    <section class="seccion" id="me-gusta" aria-labelledby="titulo-me-gusta">
+      <p class="etiqueta">Mis intereses</p>
+      <h2 id="titulo-me-gusta">Me gusta</h2>
+      <ul class="lista lista-intereses">
+        <li>Fútbol americano</li>
+        <li>Fórmula 1</li>
+        <li>Videojuegos</li>
+        <li>Indagar sobre informática</li>
+        <li>Jugar a las cartas</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Pie de página y contacto -->
+  <footer class="pie" id="contacto">
+    <div>
+      <p class="etiqueta">¿Hablamos?</p>
+      <h2>Contacto</h2>
+      <p>Puedes escribirme por correo electrónico.</p>
+      <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a>
+    </div>
+    <p class="copyright">&copy; 2026 Christopher</p>
+  </footer>
+</body>
+</html>

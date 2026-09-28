@@ -1,0 +1,454 @@
+/* Colores y medidas compartidos */
+:root {
+	color-scheme: light;
+	--rojo: #c62828;
+	--rojo-oscuro: #941f24;
+	--rojo-claro: #fff1f1;
+	--blanco: #ffffff;
+	--texto: #292323;
+	--texto-suave: #665d5d;
+	--ancho-contenido: 900px;
+}
+
+/* Base tipográfica y comportamiento de página */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--blanco);
+	color: var(--texto);
+	font-family: "Segoe UI", Tahoma, sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+a {
+	color: var(--rojo-oscuro);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	color: var(--rojo);
+}
+
+a:focus-visible {
+	border-radius: 3px;
+	outline: 3px solid currentColor;
+	outline-offset: 4px;
+}
+
+/* Cabecera roja con navegación y presentación */
+.cabecera {
+	background: var(--rojo);
+	color: var(--blanco);
+	padding: 1.25rem max(1.25rem, calc((100% - var(--ancho-contenido)) / 2)) 5.5rem;
+}
+
+.navegacion {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	max-width: var(--ancho-contenido);
+	margin: 0 auto;
+}
+
+.marca {
+	color: var(--blanco);
+	font-size: 1.25rem;
+	font-weight: 700;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.marca span {
+	color: #ffd9d9;
+}
+
+.navegacion ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.5rem 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.navegacion a:not(.marca) {
+	color: var(--blanco);
+	text-decoration: none;
+}
+
+.navegacion a:not(.marca):hover {
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.presentacion {
+	max-width: var(--ancho-contenido);
+	margin: 5rem auto 0;
+}
+
+.etiqueta {
+	margin: 0 0 0.75rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.presentacion .etiqueta {
+	color: #ffe0e0;
+}
+
+h1,
+h2,
+p {
+	margin-top: 0;
+}
+
+h1,
+h2 {
+	line-height: 1.15;
+}
+
+h1 {
+	max-width: 760px;
+	margin-bottom: 1rem;
+	font-size: clamp(2.5rem, 7vw, 4.5rem);
+	letter-spacing: 0;
+}
+
+.frase {
+	max-width: 600px;
+	margin-bottom: 2rem;
+	background: linear-gradient(90deg, #ffffff 0%, #ffc4c4 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-size: 1.15rem;
+}
+
+.enlace-principal {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	min-height: 48px;
+	padding: 0.65rem 1.15rem;
+	border: 2px solid var(--blanco);
+	border-radius: 4px;
+	background: var(--blanco);
+	color: var(--rojo-oscuro);
+	font-weight: 700;
+	text-decoration: none;
+	transition: background-color 160ms ease, color 160ms ease;
+}
+
+.enlace-principal:hover {
+	background: transparent;
+	color: var(--blanco);
+}
+
+/* Secciones centradas con un ancho máximo común */
+main {
+	max-width: var(--ancho-contenido);
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.seccion {
+	padding: 5rem 0;
+	border-bottom: 1px solid #f0dddd;
+}
+
+.seccion h2,
+.pie h2 {
+	margin-bottom: 1.25rem;
+	font-size: 2rem;
+}
+
+.seccion > p:not(.etiqueta) {
+	max-width: 720px;
+	color: var(--texto-suave);
+}
+
+/* Texto e imagen en una composición sencilla de dos columnas */
+.sobre-mi-contenido {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+	align-items: center;
+	gap: 2rem;
+}
+
+.sobre-mi-texto p {
+	max-width: 720px;
+	color: var(--texto-suave);
+}
+
+.sobre-mi-texto p:last-child {
+	margin-bottom: 0;
+}
+
+.foto-sobre-mi {
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid #f0dddd;
+	border-radius: 4px;
+}
+
+.foto-sobre-mi img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	filter: grayscale(100%);
+}
+
+.seccion .etiqueta {
+	color: var(--rojo-oscuro);
+}
+
+.seccion-roja {
+	margin: 0 -1.5rem;
+	padding: 4rem 1.5rem;
+	border: 0;
+	border-radius: 4px;
+	background: var(--rojo-claro);
+}
+
+.lista {
+	display: grid;
+	gap: 0.85rem;
+	margin: 1.5rem 0 0;
+	padding-left: 1.25rem;
+}
+
+.lista li::marker {
+	color: var(--rojo);
+}
+
+/* Intereses en dos columnas, con elementos fáciles de recorrer */
+.lista-intereses {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem 2rem;
+	padding: 0;
+	list-style: none;
+}
+
+.lista-intereses li {
+	padding: 0.8rem 0;
+	border-bottom: 1px solid #f0dddd;
+}
+
+/* Contacto y cierre de página */
+.pie {
+	margin-top: 2rem;
+	padding: 3.5rem max(1.5rem, calc((100% - var(--ancho-contenido)) / 2));
+	background: var(--rojo-oscuro);
+	color: var(--blanco);
+}
+
+.pie > div,
+.copyright {
+	max-width: var(--ancho-contenido);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.pie .etiqueta {
+	color: #ffd9d9;
+}
+
+.pie h2 {
+	margin-bottom: 0.75rem;
+}
+
+.pie a {
+	color: var(--blanco);
+}
+
+.copyright {
+	margin-top: 3rem;
+	margin-bottom: 0;
+	padding-top: 1rem;
+	border-top: 1px solid rgb(255 255 255 / 30%);
+	color: #ffe8e8;
+	font-size: 0.9rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+	.cabecera {
+		padding: 1rem 1.25rem 4rem;
+	}
+
+	.navegacion {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.navegacion ul {
+		justify-content: flex-start;
+		gap: 0.4rem 1rem;
+	}
+
+	.presentacion {
+		margin-top: 3.5rem;
+	}
+
+	main {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.seccion {
+		padding: 3.5rem 0;
+	}
+
+	.sobre-mi-contenido {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.foto-sobre-mi {
+		max-width: 460px;
+	}
+
+	.seccion-roja {
+		margin-right: -1.25rem;
+		margin-left: -1.25rem;
+		padding: 3.5rem 1.25rem;
+	}
+
+	.lista-intereses {
+		grid-template-columns: 1fr;
+		gap: 0.35rem;
+	}
+
+	.pie {
+		padding: 3rem 1.25rem;
+	}
+}
+
+/* Respeta la preferencia de movimiento reducido del dispositivo */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+	}
+}
+/* Botones de selección con iconos deportivos */
+.controles-deporte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.boton-deporte {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 42px;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--blanco);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton-deporte:hover,
+.boton-deporte[aria-pressed="true"] {
+  background: var(--blanco);
+  color: var(--rojo-oscuro);
+}
+
+.boton-deporte:focus-visible {
+  outline: 3px solid var(--blanco);
+  outline-offset: 3px;
+}
+
+/* Modo fútbol: campo verde con líneas verticales blancas */
+body.modo-futbol {
+  color-scheme: dark;
+	--blanco: #ffffff;
+  --texto: #f5f5f2;
+  --texto-suave: #d1d5d1;
+	--rojo-claro: rgb(7 48 23 / 55%);
+	background-color: #176b36;
+	background-image: repeating-linear-gradient(
+		90deg,
+		transparent 0 76px,
+		rgb(255 255 255 / 34%) 76px 81px
+	);
+}
+
+body.modo-futbol .seccion {
+  border-color: #3b423d;
+}
+
+body.modo-futbol .lista-intereses li {
+  border-color: #3b423d;
+}
+
+body.modo-futbol .seccion .etiqueta {
+  color: #ffaaaa;
+}
+
+/* Modo F1: asfalto gris con marcas de parrilla y franja a cuadros */
+body.modo-f1 {
+	--texto: #ffffff;
+	--texto-suave: #f1f1f1;
+	background-color: #686d72;
+	background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20700'%20preserveAspectRatio='none'%3E%3Cg%20fill='none'%20stroke='%23fff'%20stroke-opacity='.72'%20stroke-width='3'%3E%3Cpath%20d='M0%20700L445%20170M1000%20700L555%20170'/%3E%3Cpath%20d='M450%20225h35v12h-35zM515%20225h35v12h-35zM420%20305h55v16h-55zM525%20305h55v16h-55zM365%20395h90v21h-90zM545%20395h90v21h-90zM285%20495h135v27H285zM580%20495h135v27H580zM175%20610h185v34H175zM640%20610h185v34H640z'/%3E%3C/g%3E%3C/svg%3E");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+body.modo-f1 .seccion-roja {
+	background-color: rgb(255 255 255 / 10%);
+}
+
+body.modo-f1 .cabecera {
+  position: relative;
+  padding-bottom: 6rem;
+}
+
+body.modo-f1 .cabecera::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 8px;
+  background-color: #fff;
+  background-image: conic-gradient(#222 25%, #fff 0 50%, #222 0 75%, #fff 0);
+  background-size: 16px 16px;
+  content: "";
+}
+
+/* En móvil, los selectores pueden ocupar más de una línea */
+@media (max-width: 600px) {
+  .controles-deporte {
+    justify-content: flex-start;
+  }
+}
