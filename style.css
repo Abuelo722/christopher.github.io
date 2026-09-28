@@ -389,7 +389,7 @@ main {
 
 /* Modo fútbol: campo verde con líneas verticales blancas */
 body.modo-futbol {
-  color-scheme: dark;
+  color-scheme: white;
 	--blanco: #ffffff;
   --texto: #f5f5f2;
   --texto-suave: #d1d5d1;
